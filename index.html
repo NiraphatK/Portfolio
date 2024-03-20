@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="aos-master/dist/aos.css" rel="stylesheet" />
+    <script src="aos-master/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <!-- Body -->
+  <body class="vh-100 overflow-x-hidden" data-bs-theme="dark">
+    <!-- Star -->
+    <section>
+      <span class="star"></span>
+      <span class="star"></span>
+      <span class="star"></span>
+    </section>
+
+    <!-- Back to top button -->
+    <button
+      type="button"
+      class="btn btn-primary-custom btn-back btn-floating btn-lg transition-out"
+      id="btn-back-to-top"
+      onclick="scrollToTop()"
+    >
+      <i class="fas fa-arrow-up" style="color: #ffffff"></i>
+    </button>
+
+    <!-- Modal Contact -->
+    <div
+      class="modal fade"
+      id="contactModal"
+      tabindex="-1"
+      aria-labelledby="contactModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="contactModalLabel">
+              Send Message
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3 needs-validation" novalidate>
+              <div class="col-md-6">
+                <label for="validationCustom01" class="form-label"
+                  >First name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationCustom01"
+                  value=""
+                  required
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+              <div class="col-md-6">
+                <label for="validationCustom02" class="form-label"
+                  >Last name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationCustom02"
+                  value=""
+                  required
+                />
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+
+              <div class="col-md-12">
+                <label for="validationCustom03" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="validationCustom03"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Please enter your email address.
+                </div>
+              </div>
+
+              <div class="col-md-12">
+                <label for="validationCustom04" class="form-label"
+                  >Message</label
+                >
+                <textarea
+                  class="form-control"
+                  id="validationCustom04"
+                  required
+                ></textarea>
+                <div class="invalid-feedback">Please enter a message.</div>
+              </div>
+
+              <div class="col-12">
+                <button
+                  class="btn btn-primary-custom btn-hover transition-out btn-submit"
+                  onclick="checkMessage()"
+                  type="submit"
+                >
+                  Submit form <i class="fa-regular fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Side bar -->
+    <nav id="navbar" class="navbar nav-menu fixed transition-out">
+      <ul>
+        <li>
+          <a href="#home" class="nav-link active center"
+            ><i class="fa-solid fa-house-user"></i> <span>Home</span></a
+          >
+        </li>
+        <li>
+          <a href="#about" class="nav-link center"
+            ><i class="fa-regular fa-user"></i> <span>About</span></a
+          >
+        </li>
+        <li>
+          <a href="#education" class="nav-link center"
+            ><i class="fa-regular fa-building"></i> <span>Education</span></a
+          >
+        </li>
+        <li>
+          <a href="#portfolio" class="nav-link center"
+            ><i class="fa-regular fa-file"></i> <span>Portfolio</span></a
+          >
+        </li>
+        <li>
+          <a
+            onclick="toggleTheme()"
+            class="nav-link center"
+            style="cursor: pointer"
+            ><i class="fa-solid fa-circle-half-stroke"></i>
+            <span>Toggle Theme</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Nav bar -->
+    <div class="bg" id="home">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container">
+          <a
+            class="navbar-brand fs-4 button transform-zoom transition-out"
+            href="index.html"
+            >Niraphat</a
+          >
+          <button
+            class="navbar-toggler shadow-none border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="sidebar offcanvas offcanvas-start"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header text-white border-bottom">
+              <h5 class="offcanvas-title no-point" id="offcanvasNavbarLabel">
+                Niraphat
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white shadow-none"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body contact">
+              <ul
+                class="navbar-nav nav-underline justify-content-center align-items-center fs-5 flex-grow-1 pe-3"
+              >
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="#education">Education</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+              </ul>
+
+              <div class="d-flex justify-content-center align-items-center">
+                <a
+                  href="https://github.com/NiraphatK"
+                  class="p-2 transform-zoom transition-out"
+                  target="_blank"
+                  ><i class="fa-brands fa-github" style="color: #ddd"></i
+                ></a>
+                <a
+                  href="https://discordapp.com/users/261834660164796417"
+                  target="_blank"
+                  class="p-2 transform-zoom transition-out"
+                  ><i class="fa-brands fa-discord" style="color: #ddd"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/_niraphat/"
+                  target="_blank"
+                  class="p-2 transform-zoom transition-out"
+                  ><i class="fa-brands fa-instagram" style="color: #ddd"></i
+                ></a>
+
+                <div class="dropdown">
+                  <a
+                    class="dropdown-toggle none-list p-2"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i
+                      class="fa-solid fa-circle-half-stroke"
+                      style="color: #ffffff"
+                    ></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li>
+                      <a class="dropdown-item" href="#" onclick="toggleTheme()"
+                        ><i
+                          class="fa-solid fa-moon me-2"
+                          style="color: #ffffff"
+                        ></i>
+                        Dark mode</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#" onclick="toggleTheme()"
+                        ><i
+                          class="fa-regular fa-sun me-1"
+                          style="color: #ffffff"
+                        ></i>
+                        Light mode</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!--Contact Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn ms-2 text-white btn-hover transition-out"
+                  data-bs-toggle="modal"
+                  data-bs-target="#contactModal"
+                  style="
+                    --bs-btn-padding-y: 0.25rem;
+                    --bs-btn-padding-x: 0.5rem;
+                    --bs-btn-font-size: 0.75rem;
+                    background-color: #4a328e;
+                  "
+                >
+                  Contact
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Welcome Text -->
+      <main>
+        <section
+          class="w-100 vh-100 d-flex flex-column justify-content-center align-items-center text-white fs-1"
+        >
+          <h1
+            class="display-1 text-shadow mt-4 no-point animated-element floating-image"
+            data-aos="fade-in"
+            data-aos-delay="500"
+            data-aos-duration="2500"
+          >
+            Welcome
+          </h1>
+          <div
+            class="fs-3 no-point"
+            data-aos="fade-in"
+            data-aos-delay="500"
+            data-aos-duration="2500"
+          >
+            I'm Niraphat
+          </div>
+          <a
+            href="#about"
+            data-aos="fade-in"
+            data-aos-delay="500"
+            data-aos-duration="2500"
+          >
+            <button class="btn btn-about text-white btn-hover transition-out">
+              About me
+            </button>
+          </a>
+        </section>
+      </main>
+    </div>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container-fluid container-custom">
+        <div id="row1" class="row">
+          <div
+            class="col-lg-3 left-menu center-card d-flex flex-row flex-wrap mt2remSM"
+          >
+            <div class="card-container rounded floating-image text-center">
+              <span class="tni rounded">TNI</span>
+              <img
+                class="img-fluid round img-card animated"
+                src="assets/me.jpg"
+              />
+              <h3 class="fs-5 mt-2">Niraphat Konghuayrob</h3>
+              <h6 class="fs-5 lead">Bangkok</h6>
+              <p class="fs-6 lead">Information Technology</p>
+              <div class="buttons">
+                <a
+                  href="assets/Curriculum_Vitae.pdf"
+                  download
+                  class="none-list"
+                >
+                  <button
+                    class="btn btn-primary-custom btn-about btn-hover text-white transform-zoom-out"
+                  >
+                    CV
+                    <i class="fa-solid fa-download" style="color: #ffffff"></i>
+                  </button>
+                </a>
+
+                <button
+                  type="button"
+                  class="btn btn-primary-custom btn-about btn-hover text-white transform-zoom-out"
+                  data-bs-toggle="modal"
+                  data-bs-target="#contactModal"
+                >
+                  Contact
+                </button>
+              </div>
+              <div class="skills rounded">
+                <h6>Skills</h6>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>React Native</li>
+                  <li>C#</li>
+                  <li>Python</li>
+                  <li>Java</li>
+                  <li>PHP</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card-container rounded floating-image mt2rem ml2rem">
+              <h3 class="fs-5-cus-head mt-2 text-center">
+                Personal Information
+              </h3>
+              <div class="mt-4">
+                <h6 class="fs-5-cus pe-3 ps-3">Nickname :</h6>
+                <p class="fs-6-cus lead pe-3 ps-3">Phat</p>
+              </div>
+              <div>
+                <h6 class="fs-5-cus pe-3 ps-3">Birthdate :</h6>
+                <p class="fs-6-cus lead pe-3 ps-3">23-09-2003</p>
+              </div>
+
+              <div class="pb-4">
+                <h6 class="fs-5-cus pe-3 ps-3">Nationality :</h6>
+                <p class="fs-6-cus lead pe-3 ps-3">Thai</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-9">
+            <div class="about-text">
+              <h1 class="main-welcome display-1 no-point">
+                Say Hi from
+                <span class="name-welcome text-primary-custom2 no-point"
+                  >Niraphat</span
+                >, Thai-Nichi Institute of Technology
+              </h1>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 g-3 mt-2 card-m">
+              <div class="col">
+                <div class="card h-100 transform-zoom-out card-edu">
+                  <i
+                    class="fa-solid fa-palette fa-5x center mt-5"
+                    style="color: #4a328e"
+                  ></i>
+                  <div class="card-body center flex-column">
+                    <h5 class="card-title text-center mb-4">Web Design</h5>
+                    <!-- <button
+                      class="btn btn-about text-white btn-hover transform-zoom-out mt-1"
+                    >
+                      Learn More
+                    </button> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 transform-zoom-out card-edu">
+                  <i
+                    class="fa-solid fa-server fa-5x center mt-5"
+                    style="color: #4a328e"
+                  ></i>
+                  <div class="card-body center flex-column">
+                    <h5 class="card-title text-center mb-4">
+                      Backend Development
+                    </h5>
+                    <!-- <button
+                      class="btn btn-about text-white btn-hover transform-zoom-out mt-1"
+                    >
+                      Learn More
+                    </button> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 transform-zoom-out card-edu">
+                  <i
+                    class="fa-solid fa-code fa-5x center mt-5"
+                    style="color: #4a328e"
+                  ></i>
+                  <div class="card-body center flex-column">
+                    <h5 class="card-title text-center mb-4">
+                      Frontend Development
+                    </h5>
+                    <!-- <button
+                      class="btn btn-about text-white btn-hover transform-zoom-out mt-1"
+                    >
+                      Learn More
+                    </button> -->
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card h-100 transform-zoom-out card-edu">
+                  <i
+                    class="fa-solid fa-mobile-screen-button fa-5x center mt-5"
+                    style="color: #4a328e"
+                  ></i>
+                  <div class="card-body center flex-column">
+                    <h5 class="card-title text-center mb-4">
+                      Mobile Application
+                    </h5>
+                    <!-- <button
+                      class="btn btn-about text-white btn-hover transform-zoom-out mt-1"
+                    >
+                      Learn More
+                    </button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container mt-5 section-title">
+        <h1 class="display-1 center no-point">Skills</h1>
+        <div class="row">
+          <div class="col-6">
+            <h3 class="text-center">Frontend</h3>
+            <div class="progress mb-3" style="height: 28px">
+              <div
+                class="progress-bar progress-bar-striped progress-bar-animated bg-progress"
+                role="progressbar"
+                style="width: 85%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                HTML
+              </div>
+            </div>
+
+            <div class="progress mb-3" style="height: 28px">
+              <div
+                class="progress-bar progress-bar-striped progress-bar-animated bg-progress"
+                role="progressbar"
+                style="width: 85%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                CSS
+              </div>
+            </div>
+
+            <div class="progress mb-3" style="height: 28px">
+              <div
+                class="progress-bar progress-bar-striped progress-bar-animated bg-progress"
+                role="progressbar"
+                style="width: 45%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                JAVA SCRIPT
+              </div>
+            </div>
+
+            <div class="progress mb-3" style="height: 28px">
+              <div
+                class="progress-bar progress-bar-striped progress-bar-animated bg-progress"
+                role="progressbar"
+                style="width: 25%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                REACT NATIVE
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <h3 class="text-center">Backend</h3>
+            <div class="progress mb-3" style="height: 28px">
+              <div
+                class="progress-bar progress-bar-striped progress-bar-animated bg-progress"
+                role="progressbar"
+                style="width: 85%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                C#
+              </div>
+            </div>
+
+            <div class="progress mb-3" style="height: 28px">
+              <div
+                class="progress-bar progress-bar-striped progress-bar-animated bg-progress"
+                role="progressbar"
+                style="width: 60%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                PYTHON
+              </div>
+            </div>
+
+            <div class="progress mb-3" style="height: 28px">
+              <div
+                class="progress-bar progress-bar-striped progress-bar-animated bg-progress"
+                role="progressbar"
+                style="width: 75%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                JAVA
+              </div>
+            </div>
+
+            <div class="progress mb-3" style="height: 28px">
+              <div
+                class="progress-bar progress-bar-striped progress-bar-animated bg-progress"
+                role="progressbar"
+                style="width: 25%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                PHP
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="">
+      <div class="container pt-5 section-title">
+        <h1 class="display-1 center mb-5 no-point">Education</h1>
+        <div class="main-timeline">
+          <div class="timeline left">
+            <div class="card-edu rounded" data-aos="fade-right">
+              <div class="card-body p-4">
+                <div class="d-flex">
+                  <img
+                    class="img-fluid img-education me-4 rounded"
+                    src="assets/img-education/TNI.png"
+                    alt=""
+                  />
+                  <div>
+                    <h3 class="text-edu-head">2022-Present</h3>
+                    <p class="mb-0 text-edu">
+                      <a
+                        class="none-list"
+                        target="_blank"
+                        href="https://www.tni.ac.th/home/"
+                        >Thai-Nichi Institute of Technology</a
+                      >
+                      <br />
+                      Higher education - Information Technology
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline right">
+            <div class="card-edu rounded" data-aos="fade-left">
+              <div class="card-body p-4">
+                <div class="d-flex">
+                  <img
+                    class="img-fluid img-education me-4 rounded"
+                    src="assets/img-education/TUPP.png"
+                    alt=""
+                  />
+                  <div>
+                    <h3 class="text-edu-head">2019-2021</h3>
+                    <p class="mb-0 text-edu">
+                      <a
+                        class="none-list"
+                        target="_blank"
+                        href="https://www.tupp.ac.th/"
+                        >Triamudomsuksa patthanakarn suwannabhumi School</a
+                      >
+                      <br />
+                      High school - Math and English program
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline left">
+            <div class="card-edu rounded" data-aos="fade-right">
+              <div class="card-body p-4">
+                <div class="d-flex">
+                  <img
+                    class="img-fluid img-education me-4 rounded"
+                    src="assets/img-education/TUS.png"
+                    alt=""
+                  />
+                  <div>
+                    <h3 class="text-edu-head">2016-2018</h3>
+                    <p class="mb-0 text-edu">
+                      <a
+                        class="none-list"
+                        target="_blank"
+                        href="http://www.tusw.ac.th/"
+                        >Triamudomsuksa Suwinthawong School</a
+                      ><br />
+                      Junior high school
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline right">
+            <div class="card-edu rounded" data-aos="fade-left">
+              <div class="card-body p-4">
+                <div class="d-flex">
+                  <img
+                    class="img-fluid img-education me-4 rounded"
+                    src="assets/img-education/MP.png"
+                    alt=""
+                  />
+                  <div>
+                    <h3 class="text-edu-head">2010-2015</h3>
+                    <p class="mb-0 text-edu">
+                      <a
+                        class="none-list"
+                        target="_blank"
+                        href="https://minprasatwitaya.ac.th/"
+                        >Minprasatwitaya school</a
+                      ><br />
+                      Primary education
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Image DD Rental Car-->
+    <div
+      class="modal fade"
+      id="imageModal"
+      tabindex="-1"
+      aria-labelledby="imageModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-pop modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="carouselExample" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="assets/img-project/java/Picture1.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/java/Picture2.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/java/Picture3.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/java/Picture4.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer center">
+            <h3 class="display-6 fs-2">DD Rental Car - JAVA</h3>
+            <p class="fs-6 lead ps-5 pe-5 text-center">
+              This program is a first year group project written in Java. It's a
+              car rental program.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Image React Native Bottom taps -->
+    <div
+      class="modal fade"
+      id="imageModal2"
+      tabindex="-1"
+      aria-labelledby="imageModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-pop modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="carouselExample2" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="assets/img-project/react/react1.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/react/react2.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/react/react3.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample2"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample2"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer center">
+            <h3 class="display-6 fs-2">
+              Navigation/Bottom taps - REACT NATIVE
+            </h3>
+            <p class="fs-6 lead ps-5 pe-5 text-center">
+              Write navigation bottom taps with React Native.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Image React Native Drawer -->
+    <div
+      class="modal fade"
+      id="imageModal4"
+      tabindex="-1"
+      aria-labelledby="imageModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-pop modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="carouselExample4" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="assets/img-project/react/react(2)-1.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/react/react(2)-2.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/react/react(2)-3.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample4"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample4"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer center">
+            <h3 class="display-6 fs-2">Navigation/Drawer - REACT NATIVE</h3>
+            <p class="fs-6 lead ps-5 pe-5 text-center">
+              Write navigation drawer with React Native.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Image Bot-Discord -->
+    <div
+      class="modal fade"
+      id="imageModal3"
+      tabindex="-1"
+      aria-labelledby="imageModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-pop modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="carouselExample3" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="assets/img-project/node-js/bot-discord1.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/node-js/bot-discord2.png"
+                    class="modal-dialog modal-dialog-centered d-block"
+                    style="height: 600px"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/node-js/bot-discord3.png"
+                    style="min-height: 400px; min-width: 60%"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/node-js/bot-discord4.png"
+                    style="min-height: 400px; min-width: 60%"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample3"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample3"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer center">
+            <h3 class="display-6 fs-2">Discord Whitelist Bot - NODE JS</h3>
+            <p class="fs-6 lead ps-5 pe-5 text-center">
+              Write a discord bot with Node JS, a bot used to select whitelist
+              people to enter the game server.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Image React Native Drawer -->
+    <div
+      class="modal fade"
+      id="imageModal5"
+      tabindex="-1"
+      aria-labelledby="imageModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-pop modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="carouselExample5" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="assets/img-project/html-css/fivem1.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/html-css/fivem2.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/html-css/fivem3.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                    style="min-height: 400px; min-width: 60%"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/html-css/fivem4.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample5"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample5"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer center">
+            <div>
+              <h3 class="display-6 fs-2 text-center">GTAV - HTML CSS</h3>
+              <div class="fs-6 lead ps-5 pe-5 text-center">
+                Write the interface for the FiveM game.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Image Web design -->
+    <div
+      class="modal fade"
+      id="imageModal6"
+      tabindex="-1"
+      aria-labelledby="imageModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-pop modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div id="carouselExample6" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="assets/img-project/html-css/32.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/html-css/33.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/html-css/34.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                    style="min-height: 400px; min-width: 60%"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/html-css/35.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/html-css/36.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/html-css/37.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/html-css/38.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/img-project/html-css/39.png"
+                    class="modal-dialog modal-dialog-centered"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample6"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample6"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer center">
+            <h3 class="display-6 fs-2">Web design - HTML CSS</h3>
+            <p class="fs-6 lead ps-5 pe-5 text-center">
+              It is a website design for reporting problems with broken or
+              unusable equipment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+      <div class="container mt-5 section-title">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="filter-buttons" class="text-center">
+              <h1 class="display-1 center mb-5 no-point">Projects</h1>
+              <div class="filter-img mb-3">
+                <button
+                  class="btn btn-primary-custom category-button btn-filter text-white transform-zoom-out"
+                  data-category="all"
+                >
+                  All
+                </button>
+                <button
+                  class="btn btn-primary-custom category-button btn-filter text-white transform-zoom-out"
+                  data-category="front"
+                >
+                  Frontend
+                </button>
+                <button
+                  class="btn btn-primary-custom category-button btn-filter text-white transform-zoom-out"
+                  data-category="back"
+                >
+                  Backend
+                </button>
+                <button
+                  class="btn btn-primary-custom category-button btn-filter text-white transform-zoom-out mt-1rem"
+                  data-category="mobile"
+                >
+                  Mobile Application
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" id="image-gallery">
+          <div class="col-md-4 mt-3" data-category="back">
+            <div class="image-filter modal-dialog-centered hover-project">
+              <img
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+                class="rounded"
+                src="assets/img-project/java/Picture1.png"
+                alt=""
+              />
+              <div class="overlay-text fs-6 lead no-point">
+                Click for details
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3" data-category="front">
+            <div class="image-filter modal-dialog-centered hover-project">
+              <img
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal6"
+                class="rounded"
+                src="assets/img-project/html-css/32.png"
+                alt=""
+              />
+              <div class="overlay-text fs-6 lead no-point">
+                Click for details
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3" data-category="front">
+            <div class="image-filter modal-dialog-centered hover-project">
+              <img
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal5"
+                class="rounded"
+                src="assets/img-project/html-css/fivem1.png"
+                alt=""
+              />
+              <div class="overlay-text fs-6 lead no-point">
+                Click for details
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3" data-category="mobile">
+            <div class="image-filter modal-dialog-centered hover-project">
+              <img
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal2"
+                class="rounded"
+                src="assets/img-project/react/react0.png"
+                alt=""
+              />
+              <div class="overlay-text fs-6 lead no-point">
+                Click for details
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3" data-category="mobile">
+            <div class="image-filter modal-dialog-centered hover-project">
+              <img
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal4"
+                class="rounded"
+                src="assets/img-project/react/react(2)-0.png"
+                alt=""
+              />
+              <div class="overlay-text fs-6 lead no-point">
+                Click for details
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3" data-category="back">
+            <div class="image-filter modal-dialog-centered hover-project">
+              <img
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal3"
+                class="rounded"
+                src="assets/img-project/node-js/bot-discord0.png"
+                alt=""
+              />
+              <div class="overlay-text fs-6 lead no-point">
+                Click for details
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="display-1 center mb-5 mt-5 no-point">Activities</h1>
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="cards-wrapper">
+                <div class="card card-carousel transform-zoom-out card-edu">
+                  <img
+                    src="assets/img-activities/booth.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Booth IT</h5>
+                    <p class="card-text">
+                      Go to a booth at Darasamutr School to introduce our
+                      institution.
+                    </p>
+                    <a
+                      href="https://www.facebook.com/DarasamutrOffical/"
+                      target="_blank"
+                      class="btn btn-primary-custom text-white transform-zoom-out btn-hover"
+                      >Learn more</a
+                    >
+                  </div>
+                </div>
+
+                <div
+                  class="card d-none d-md-block card-carousel transform-zoom-out card-edu"
+                >
+                  <img
+                    src="assets/img-activities/freshy-2.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">TNI Freshly 2023</h5>
+                    <p class="card-text">
+                      Cute welcoming activities for IT people in the year 2023.
+                    </p>
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/TNIfacultyIT/posts/pfbid02MT78wPYb9eDe3Xp6uo5rmqo8kjD1iVFr2vF4XMLpuiRv8q6fQAGFrgDE22ZE4E7jl"
+                      class="btn btn-primary-custom text-white transform-zoom-out btn-hover"
+                      >Learn more</a
+                    >
+                  </div>
+                </div>
+                <div
+                  class="card d-none d-md-block card-carousel transform-zoom-out card-edu"
+                >
+                  <img
+                    src="assets/img-activities/it-camp.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">IT Camp 2023</h5>
+                    <p class="card-text">
+                      Generative AI activity in the IT Camp, working as a team
+                      for those who attended the activity.
+                    </p>
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/thainichi.IT/posts/pfbid029MygmVnarcjhKYKBR4zBryrgB3X4zzJbfhcHUoh3RbwE2vYyxtXkx7zayzoUL2ZUl"
+                      class="btn btn-primary-custom text-white transform-zoom-out btn-hover"
+                      >Learn more</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="cards-wrapper">
+                <div class="card card-carousel transform-zoom-out card-edu">
+                  <img
+                    src="assets/img-activities/openhouse.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">IT Open house 2023</h5>
+                    <p class="card-text">
+                      TNI open house activity at the TNI Day event, joining a
+                      team in the booth of the IT branch.
+                    </p>
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/thainichi.IT/posts/pfbid0Ry6wC3hBaUp2teKsaW1ET3eDYasBjMFVTNHiEq4MXeQtQVVNs4eZ2JMtaC4QCMNUl"
+                      class="btn btn-primary-custom text-white transform-zoom-out btn-hover"
+                      >Learn more</a
+                    >
+                  </div>
+                </div>
+                <div
+                  class="card d-none d-md-block card-carousel transform-zoom-out card-edu"
+                >
+                  <img
+                    src="assets/img-activities/tni-games.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">TNI Games 2022</h5>
+                    <p class="card-text">
+                      Participated in TNI games in the Valorant game competition
+                      and won 2nd place.
+                    </p>
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/SU.TNI.ac.th/videos/513998050670508/"
+                      class="btn btn-primary-custom text-white transform-zoom-out btn-hover"
+                      >Learn more</a
+                    >
+                  </div>
+                </div>
+                <div
+                  class="card d-none d-md-block card-carousel transform-zoom-out card-edu"
+                >
+                  <img
+                    src="assets/img-activities/tnibir.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">TNIAC2023＆ICBIR2023</h5>
+                    <p class="card-text">
+                      Become a session assistant to help with timing at
+                      TNIAC2023＆ICBIR2023.
+                    </p>
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/training.tni/posts/pfbid0FMiC3mzmebdtXRcxN5HNLBzTrt1ACdeX5wLjPoKsFMmvucksYppFz6PsoaLPd7xel"
+                      class="btn btn-primary-custom text-white transform-zoom-out btn-hover"
+                      >Learn more</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+      <div class="my-5">
+        <footer class="bg-transparent text-center text-white">
+          <!--Waves Container-->
+          <div>
+            <svg
+              class="waves"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 24 150 28"
+              preserveAspectRatio="none"
+              shape-rendering="auto"
+            >
+              <defs>
+                <path
+                  id="gentle-wave"
+                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+                />
+              </defs>
+              <g class="parallax">
+                <use
+                  class="wave1"
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="0"
+                  fill="rgba(255,255,255,0.7)"
+                />
+                <use
+                  class="wave2"
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="3"
+                  fill="rgba(255,255,255,0.5)"
+                />
+                <use
+                  class="wave3"
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="5"
+                  fill="rgba(255,255,255,0.3)"
+                />
+                <use
+                  class="wave4"
+                  xlink:href="#gentle-wave"
+                  x="48"
+                  y="7"
+                  fill="#fff"
+                />
+              </g>
+            </svg>
+          </div>
+          <div class="text-center pt-4 pb-3" style="background-color: #4a328e">
+            © 2024 Copyright:
+            <a class="text-white" href="#">Niraphat</a>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <!-- Loading -->
+    <div class="loading">
+      <h1 class="loading-title">loading</h1>
+      <div class="loading-progress"></div>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  AOS.init();
+</script>
