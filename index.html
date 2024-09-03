@@ -176,9 +176,9 @@
             >Niraphat</a
           >
           <button
+            id="navbarToggle"
             class="navbar-toggler shadow-none border-0"
             type="button"
-            data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar"
             aria-label="Toggle navigation"
@@ -258,23 +258,32 @@
                     ></i>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-dark">
+                    <!-- HTML -->
                     <li>
-                      <a class="dropdown-item" href="#" onclick="toggleTheme()"
-                        ><i
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onclick="toggleTheme('dark')"
+                      >
+                        <i
                           class="fa-solid fa-moon me-2"
                           style="color: #ffffff"
                         ></i>
-                        Dark mode</a
-                      >
+                        Dark mode
+                      </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#" onclick="toggleTheme()"
-                        ><i
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onclick="toggleTheme('light')"
+                      >
+                        <i
                           class="fa-regular fa-sun me-1"
                           style="color: #ffffff"
                         ></i>
-                        Light mode</a
-                      >
+                        Light mode
+                      </a>
                     </li>
                   </ul>
                 </div>

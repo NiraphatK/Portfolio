@@ -67,9 +67,15 @@ function scrollToTop() {
   });
 }
 
-function toggleTheme() {
-  document.body.dataset.bsTheme =
-    document.body.dataset.bsTheme === "light" ? "dark" : "light";
+// JavaScript
+function toggleTheme(theme) {
+  // ตรวจสอบธีมปัจจุบัน
+  const currentTheme = document.body.dataset.bsTheme;
+
+  // ตรวจสอบธีมที่ต้องการและเปลี่ยนแปลง
+  if (currentTheme !== theme) {
+    document.body.dataset.bsTheme = theme;
+  }
 }
 
 var initialBackgroundSize = "cover"; // ขนาดเริ่มต้นของภาพพื้นหลัง
@@ -114,3 +120,13 @@ const fakeLoaderInterval = window.setInterval(function () {
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  var offcanvasElement = document.getElementById("offcanvasNavbar");
+  var bsOffcanvas = new bootstrap.Offcanvas(offcanvasElement);
+
+  var toggleButton = document.getElementById("navbarToggle");
+  toggleButton.addEventListener("click", function () {
+    bsOffcanvas.toggle();
+  });
+});
