@@ -77,6 +77,10 @@ function toggleTheme(theme) {
     document.body.dataset.bsTheme = theme;
   }
 }
+function toggleThemeSideBar() {
+  document.body.dataset.bsTheme =
+    document.body.dataset.bsTheme === "light" ? "dark" : "light";
+}
 
 var initialBackgroundSize = "cover"; // ขนาดเริ่มต้นของภาพพื้นหลัง
 
