@@ -12,4 +12,4 @@ This portfolio project was created as part of the Web Design and Development (IT
 - **Bootstrap**: Front-end framework for responsive design and UI components.
 
 #
->> <a href="https://portfolio-niraphat-website.vercel.app/" target="_blank">Link my portfolio</a>
+>> [Link my portfolio](https://portfolio-niraphat-website.vercel.app/)
